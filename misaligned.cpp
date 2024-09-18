@@ -14,7 +14,7 @@ int printColorMap(std::ostream& out) {
     int i = 0, j = 0;
     for (i = 0; i < numberOfMajorColors; i++) {
         for (j = 0; j < numberOfMinorColors; j++) {
-            out  << i * numberOfMinorColors + j << " | " << majorColor[i] 
+            out  << i * numberOfMinorColors + j << " | " << majorColor[i]
             << " | " << minorColor[j] << "\n";
         }
     }
