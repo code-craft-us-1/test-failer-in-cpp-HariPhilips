@@ -18,11 +18,10 @@ class IWeatherSensor {
 /// test the other parts of this application in isolation
 /// without needing the actual Sensor during development
 
-class SensorStub : public IWeatherSensor {    
-public:
-
-    SensorStub(int humidity, double temp, int prec, int windSpeed)
-        : m_humidity(humidity), m_temperature(temp), m_precipitation(prec), m_windSpeed(windSpeed) {}
+class SensorStub : public IWeatherSensor {
+ public:
+    SensorStub(int hum, double temp, int prec, int windSpeed)
+        : m_humidity(hum), m_temperature(temp), m_precipitation(prec), m_windSpeed(windSpeed) {}
 
     int Humidity() const override {
         return m_humidity;
@@ -40,12 +39,11 @@ public:
         return m_windSpeed;
     }
 
-private:
-
-    int m_humidity;
-    double m_temperature;
-    int m_precipitation;
-    int m_windSpeed;
+ private:
+        int m_humidity;
+        double m_temperature;
+        int m_precipitation;
+        int m_windSpeed;
 };
 
 // This is a function to predict the weather, based on readings
