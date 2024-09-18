@@ -10,21 +10,18 @@ const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 int numberOfMajorColors = sizeof(majorColor) / sizeof(majorColor[0]);
 int numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]);
 
-int printColorMap(std::ostream& out)
-{
+int printColorMap(std::ostream& out) {
     int i = 0, j = 0;
     for (i = 0; i < numberOfMajorColors; i++)
     {
-        for (j = 0; j < numberOfMinorColors; j++)
-        {
+        for (j = 0; j < numberOfMinorColors; j++) {
             out  << i * numberOfMinorColors + j << " | " << majorColor[i] << " | " << minorColor[j] << "\n";
         }
     }
     return i * j;
 }
 
-void testPrintColorMap() 
-{
+void testPrintColorMap() {
     std::stringstream output;
     int result = printColorMap(output);
 
@@ -40,8 +37,7 @@ void testPrintColorMap()
 
     std::string line;
     int lineNumber = 0;
-    while (std::getline(output, line))
-    {
+    while (std::getline(output, line)) {
         assert(line == expectedLines[lineNumber]);
         lineNumber++;
     }
@@ -49,8 +45,7 @@ void testPrintColorMap()
      assert(lineNumber == 25);
 }
 
-int main()
-{
+int main() {
     testPrintColorMap();
     std::cout << "All is well (maybe!)\n";
     return 0;

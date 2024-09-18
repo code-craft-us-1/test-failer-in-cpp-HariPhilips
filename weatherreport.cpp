@@ -18,10 +18,11 @@ class IWeatherSensor {
 /// test the other parts of this application in isolation
 /// without needing the actual Sensor during development
 
-class SensorStub : public IWeatherSensor {
+class SensorStub : public IWeatherSensor {    
 public:
-    SensorStub(int humidity, double temperature, int precipitation, int windSpeed)
-        : m_humidity(humidity), m_temperature(temperature), m_precipitation(precipitation), m_windSpeed(windSpeed) {}
+
+    SensorStub(int humidity, double temp, int prec, int windSpeed)
+        : m_humidity(humidity), m_temperature(temp), m_precipitation(prec), m_windSpeed(windSpeed) {}
 
     int Humidity() const override {
         return m_humidity;
@@ -40,6 +41,7 @@ public:
     }
 
 private:
+
     int m_humidity;
     double m_temperature;
     int m_precipitation;
